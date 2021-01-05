@@ -1,0 +1,21 @@
+<ActionBar [title]="'title'">
+    <Image src="res://deepl_logo" stretch="none"></Image>
+</ActionBar>
+<BottomNavigation selectedIndex="0">
+    <TabStrip>
+        <TabStripItem>
+            <Label text="Translate"></Label>
+            <Image src="res://translate"></Image>
+        </TabStripItem>
+        <TabStripItem>
+            <Label text="History"></Label>
+            <Image src="res://history"></Image>
+        </TabStripItem>
+    </TabStrip>
+    <TabContentItem>
+        <page-router-outlet name="translate"></page-router-outlet>
+    </TabContentItem>
+    <TabContentItem>
+        <page-router-outlet name="history"></page-router-outlet>
+    </TabContentItem>
+</BottomNavigation>
