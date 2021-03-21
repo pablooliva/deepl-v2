@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { RouterExtensions } from '@nativescript/angular';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+
+import { UNIVERSAL_ROUTER } from '@src/app/tokens';
 
 @Component({
   selector: 'dl-nav-tabs',
@@ -10,7 +12,10 @@ import { ActivatedRoute } from '@angular/router';
 export class NavTabsComponent implements OnInit {
   public selectedIndex: number;
 
-  constructor(private _router: RouterExtensions, private _route: ActivatedRoute) {}
+  constructor(
+    @Inject(UNIVERSAL_ROUTER) private _router: RouterExtensions | Router,
+    private _route: ActivatedRoute
+  ) {}
 
   ngOnInit() {
     this.selectedIndex = 0;

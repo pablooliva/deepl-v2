@@ -3,7 +3,8 @@ import {
   NativeScriptCommonModule,
   NativeScriptFormsModule,
   NativeScriptHttpClientModule,
-  NativeScriptModule
+  NativeScriptModule,
+  RouterExtensions
 } from '@nativescript/angular';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
@@ -11,6 +12,8 @@ import { AppComponent } from '@src/app/app.component';
 import { NavTabsComponent } from '@src/app/nav-tabs/nav-tabs.component';
 import { HistoryComponent } from '@src/app/history/history.component';
 import { TranslateComponent } from '@src/app/translate/translate.component';
+
+import { UNIVERSAL_ROUTER } from '@src/app/tokens';
 
 @NgModule({
   declarations: [AppComponent, NavTabsComponent, HistoryComponent, TranslateComponent],
@@ -21,7 +24,7 @@ import { TranslateComponent } from '@src/app/translate/translate.component';
     NativeScriptFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [{ provide: UNIVERSAL_ROUTER, useClass: RouterExtensions }],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })
