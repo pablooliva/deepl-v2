@@ -14,5 +14,11 @@
   "files": [
     "src/main.ts",
     "src/polyfills.ts"
+  ],
+  "exclude": [
+    "**/*.ns.ts",
+    "**/*.tns.ts",
+    "**/*.android.ts",
+    "**/*.ios.ts"
   ]
 }

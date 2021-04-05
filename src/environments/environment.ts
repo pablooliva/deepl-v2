@@ -1,9 +1,8 @@
-require('dotenv').config();
+import { DEEPL_TOKEN } from '../../.env';
 
 export const environment = {
   production: false,
-  // @ts-ignore
-  deeplToken: process.env.DEEPL_TOKEN
+  deeplToken: DEEPL_TOKEN
 };
 
 /*

@@ -28,7 +28,6 @@
     "@nativescript/core": "~7.0.0",
     "@nativescript/theme": "~3.0.0",
     "core-js": "^3.8.0",
-    "dotenv": "^8.2.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "~6.6.0",
     "tslib": "~2.0.0",
