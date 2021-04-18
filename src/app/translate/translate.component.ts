@@ -5,6 +5,7 @@ import { takeUntil } from 'rxjs/operators';
 
 import { AppStateService, TranslateConfig } from '@src/app/services/app-state.service';
 import { HttpService, TranslationSource } from '@src/app/services/http.service';
+import { environment } from '@src/environments/environment';
 
 @Component({
   selector: 'dl-translate',
@@ -58,6 +59,20 @@ export class TranslateComponent implements OnInit, OnDestroy {
         }
       },
       error => console.error('error', error)
+    );
+  }
+
+  public getUrl(): string {
+    const query = this.inputVal.trim();
+    const source = 'english';
+    const encodedQuery = encodeURIComponent(query).toString();
+    return (
+      'https://dict.deepl.com/english-german/search?ajax=1&query=' +
+      encodedQuery +
+      '&source=' +
+      source +
+      '&onlyDictEntries=1&translator=' +
+      environment.deeplToken
     );
   }
 

@@ -8,5 +8,5 @@
                 class="btn btn-primary"
                 (tap)="onTap($event, cfg)"></Button>
     </StackLayout>
-    <HtmlView class="output" [html]="outputVal"></HtmlView>
+    <WebView class="output" [src]="getUrl()"></WebView>
 </StackLayout>
